@@ -17,7 +17,7 @@ function lick() {
 function buyLicker() {
     if (licks >= lickerPrice) {
         licks -= lickerPrice;
-        lickerPrice += 6;
+        lickerPrice += 5;
         lickers++;
         document.getElementById("licker-price").innerHTML = `Buy auto (c)licker! (${lickerPrice} licks)`;
         document.getElementById("lick-amount").innerHTML = `You have licked ${licks} times  `;
