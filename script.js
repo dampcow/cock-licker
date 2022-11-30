@@ -1,4 +1,4 @@
-var licks = 200;
+var licks = 0;
 var lickerPrice = 10;
 var lickers = 0;
 var tickRate = 1000;
