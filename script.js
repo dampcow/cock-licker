@@ -1,10 +1,10 @@
-var licks = 0;
+var licks = 200;
 var lickerPrice = 10;
 var lickers = 0;
-var fleshlight = false;
 var tickRate = 1000;
+var oldTickRate = tickRate;
 
-var intervalID = window.setInterval(licker, tickRate);
+var lickerInterval = setInterval(licker, tickRate);
 
 function lick() {
     licks++;
@@ -31,14 +31,20 @@ function licker() {
         licks += lickers;
         document.getElementById("lick-amount").innerHTML = `You have licked ${licks} times  `;
     }
+    if (oldTickRate != tickRate) {
+        oldTickRate = tickRate;
+        clearInterval(lickerInterval);
+        lickerInterval = setInterval(licker, tickRate);
+    }
 }
 
 function buyFleshlight() {
-    // TODO: Disable button after purchase
     if (licks >= 200) {
         licks -= 200;
-        fleshlight = true;
         tickRate /= 2;
         document.getElementById("purchased-fleshlight").innerHTML = `You bought the fleshlight already!`;
+        document.getElementById("purchased-fleshlight").disabled = true;
+        document.getElementById("tick-rate").innerHTML = `Tickrate: ${tickRate}`;
+        document.getElementById("lick-amount").innerHTML = `You have licked ${licks} times`;
     }
 }
