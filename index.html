@@ -5,23 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cock (c)licker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <style>
         body {
             background-color: blanchedalmond;
-        }
-        button {
-            height: 80px;
-            width: 240px;
         }
     </style>
 </head>
 <body>
     <script src="script.js"></script>
     <h1 id="lick-amount">You have licked 0 times</h1>
-    <button onclick="lick()">(C)lick me!</button>
-    <button onclick="buyLicker()" id="licker-price">Buy auto licker! (10 licks)</button>
-    <button onclick="buyFleshlight()" id="purchased-fleshlight">Buy fleshlight! (2x licker speed) (200 licks)</button>
-    <p id="licker-amount">You have 0 lickers</p>
-    <p id="tick-rate">Tickrate: 1000</p>
+    <div class="ui vertical buttons">
+        <button onclick="lick()" class="massive ui black button">(C)lick me!</button>
+        <button onclick="buyLicker()" id="licker-price" class="massive ui red button">Buy auto licker! (10 licks)</button>
+        <button onclick="buyFleshlight()" id="purchased-fleshlight" class="massive ui yellow button">Buy fleshlight! (2x licker speed) (200 licks)</button>
+    </div>
+    <div class="ui action input">
+        <input type="password" placeholder="Enter password..." id="password-input">
+        <button class="ui button" onclick="debugMode()" id="password-check">Enter</button>
+    </div>
+    <div class="ui vertical buttons hidden">
+        <button onclick="debugButtonGive()" class="massive ui pink button" id="debug-button-give" disabled="true">You have to turn on debug mode to access this!</button>
+    </div>
+    <div id="licker-amount">You have 0 lickers</div>
+    <div id="tick-rate">Tickrate: 1000</div>
 </body>
 </html>
