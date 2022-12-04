@@ -50,20 +50,20 @@ function buyFleshlight() {
     }
 }
 
-function debugMode() {
-    const passwordFieldValue = document.getElementById("password-input").value;
-    if (passwordFieldValue == "pen1s") {
-        document.getElementById("password-input").disabled = true;
-        document.getElementById("password-check").disabled = true;
-        document.getElementById("debug-button-give").disabled = false;
-        document.getElementById("debug-button-give").innerHTML = "Give 1000 licks";
-        debugModeIsEnabled = true; 
-    }
-}
+// function debugMode() {
+//     const passwordFieldValue = document.getElementById("password-input").value;
+//     if (passwordFieldValue == "pen1s") {
+//         document.getElementById("password-input").disabled = true;
+//         document.getElementById("password-check").disabled = true;
+//         document.getElementById("debug-button-give").disabled = false;
+//         document.getElementById("debug-button-give").innerHTML = "Give 1000 licks";
+//         debugModeIsEnabled = true; 
+//     }
+// }
 
-function debugButtonGive() {
-    if (debugModeIsEnabled == true) {
-        licks += 1000
-        document.getElementById("lick-amount").innerHTML = `You have licked ${licks} times`;
-    }
-}
+// function debugButtonGive() {
+//     if (debugModeIsEnabled == true) {
+//         licks += 1000
+//         document.getElementById("lick-amount").innerHTML = `You have licked ${licks} times`;
+//     }
+// }
